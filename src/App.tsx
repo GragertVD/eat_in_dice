@@ -8,7 +8,7 @@ import '@vkontakte/vkui/dist/vkui.css';
 
 import { AppModalRoot } from 'components';
 import { enableSwipe, showBannerAds } from 'helpers';
-import { useOnboardSlides, useProfile, useGetUserActiveOrder } from 'hooks';
+import { useProfile } from 'hooks';
 import { EPanel } from 'consts/panels';
 import { EView } from 'consts/views';
 import { DataContext } from 'context/data';
@@ -25,10 +25,9 @@ const App = () => {
   const profile = dataContext?.data?.profile;
   const [adsBannerPadding, setAdsBannerPadding] = useState(0);
 
-  useOnboardSlides();
+  // useOnboardSlides();
   useProfile();
   enableSwipe();
-  useGetUserActiveOrder();
 
   useEffect(() => {
     if (!profile?.is_ads_enabled) {
